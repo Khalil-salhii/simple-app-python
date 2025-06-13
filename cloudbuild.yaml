@@ -1,0 +1,11 @@
+steps:                                                                    # permet de lister les étapes a réaliser
+- name: 'gcr.io/cloud-builders/docker'                                    # L’image Docker de Google contenant la commande docker.
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/gcpdevops', '.']              # args : Les arguments passés à la commande docker build
+ 
+ # donc je luis dit : Exécute la commande Docker suivante : docker build -t gcr.io/$PROJECT_ID/gcpdevops .”
+
+images:
+- 'gcr.io/$PROJECT_ID/gcpdevops'
+
+#Elle sert à indiquer à Cloud Build quelle(s) image(s) Docker tu veux stocker automatiquement après le build,
+# dans le Container Registry ou Artifact Registry de ton projet GCP.
