@@ -1,5 +1,5 @@
-from falsk import Flask
-app = Flask(_name_)
+from flask import Flask
+app = Flask(__name__)  # Correction: __name__ au lieu de _name_
 
 @app.route('/')
 def hello_world():
