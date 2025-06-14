@@ -6,8 +6,19 @@ steps:                                                                    # perm
  
  # donc je luis dit : Exécute la commande Docker suivante : docker build -t gcr.io/$PROJECT_ID/gcpdevops .”
 
-images:
-- 'gcr.io/$PROJECT_ID/gcpdevops'
+- name: 'gcr.io/cloud-builders/docker'
+  args: ["push","gcr.io/$PROJECT_ID/gcpdevops"]
 
 #Elle sert à indiquer à Cloud Build quelle(s) image(s) Docker tu veux stocker automatiquement après le build,
 # dans le Container Registry ou Artifact Registry de ton projet GCP.
+
+# déployer l'image conteneur dans GKE
+
+- name: "gcr.io/cloud-builder/gke-deploy"
+  args: 
+  - run
+  - -filename=gke.yaml
+  - --image=gcr.io/$PROJECT_ID/gcpdevops
+  - --location=us-centrale1-c
+  - --cluster=gcp-devops-project
+  - --namespace=gcp-devops-prod
