@@ -19,6 +19,6 @@ steps:                                                                    # perm
   - run
   - -filename=gke.yaml
   - --image=gcr.io/$PROJECT_ID/gcpdevops
-  - --location=us-centrale1-c
+  - --location=us-central1-c
   - --cluster=gcp-devops-project
   - --namespace=gcp-devops-prod
