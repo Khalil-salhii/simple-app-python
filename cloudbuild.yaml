@@ -18,6 +18,7 @@ steps:                                                                    # perm
   args: 
   - run
   - --filename=gke.yaml
+  - --filename=service.yaml
   - --image=gcr.io/$PROJECT_ID/gcpdevops
   - --location=us-central1-c
   - --cluster=gcp-devops-project
