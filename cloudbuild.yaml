@@ -14,7 +14,7 @@ steps:                                                                    # perm
 
 # déployer l'image conteneur dans GKE
 
-- name: "gcr.io/cloud-builder/gke-deploy"    # l'objet gke-deploy : c'est un objet de google qui permet de déployer automatiquement l'image sur le cluster  
+- name: "gcr.io/cloud-builders/gke-deploy"    # l'objet gke-deploy : c'est un objet de google qui permet de déployer automatiquement l'image sur le cluster  
   args: 
   - run
   - -filename=gke.yaml
