@@ -13,8 +13,8 @@ spec:
         app: gcp 
     spec:
       containers:
-        - name: gcp-devops-gke
-          image: gcr.io/projet-khalil/gcpdevops-dev:latest
+        - name: gcp-devops
+          image: gcr.io/projet-khalil/image_gcpdevops:latest
           ports:
             - containerPort: 5000
           env:
