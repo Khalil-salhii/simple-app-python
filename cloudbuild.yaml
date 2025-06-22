@@ -20,6 +20,6 @@ steps:                                                                    # perm
   - --filename=gke.yaml
   - --filename=service.yaml
   - --image=gcr.io/$PROJECT_ID/image_gcpdevops
-  - --location=us-central1-c
-  - --cluster=gcp-devops-project
-  - --namespace=gcp-devops_projet
+  - --location=europe-west1-b
+  - --cluster=cluster-k-khalil
+  - --namespace=gcp-devops-projet
