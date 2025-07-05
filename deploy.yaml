@@ -7,11 +7,11 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: gcp 
+      app: gcp
   template:
     metadata:
       labels:
-        app: gcp 
+        app: gcp
     spec:
       containers:
         - name: gcp-devops
@@ -19,21 +19,21 @@ spec:
           ports:
             - containerPort: 5000
           env:
-            - name: PORT 
+            - name: PORT
               value: "5000"
-----------
-apiVersion: "v1"
+---
+apiVersion: v1
 kind: Service
 metadata:
-  name: "gcp-devops-gke-service"
+  name: gcp-devops-gke-service
   namespace: gcp-devops-projet
   labels:
-    app.kubernetes.io/managed-by: "gcp-cloud-build-deploy"
+    app.kubernetes.io/managed-by: gcp-cloud-build-deploy
 spec:
+  selector:
+    app: gcp
   ports:
-    - protocol: "TCP"
+    - protocol: TCP
       port: 80
       targetPort: 5000
-  selector:
-    app: "gcp"
-  type: "LoadBalancer"  # or clusterIp ou nodePort loadBlancer permet d'exposer sur internet 
+  type: LoadBalancer
